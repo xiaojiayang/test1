@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+DjangoUeditor/static/ueditor
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <script src="/static/js/jquery-2.2.4.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
+{#    <link rel="stylesheet" type="text/css" href="/static/ue/shCoreDefault.css">#}
+{#    <script type="text/javascript" src="/static/ue/third-party/SyntaxHighlighter/shCore.js"></script>#}
+{#    <script type="text/javascript" charset="utf-8" src="/static/ue/ueditor.config.js"></script>#}
+{#    <script type="text/javascript" charset="utf-8" src="/static/ue/ueditor.all.min.js"> </script>#}
+{#    <script type="text/javascript" charset="utf-8" src="/static/ue/zh-cn.js"></script>#}
+</head>
+<body>
+{{ ry}}
+{% for i in ry%}
+{{i.name }}<br>
+    {{ i.dpartment}}
+{% endfor %}
+<br>
+
+{% for book in books %}
+   书名: {{ book.title }}
+{#    {% for authors in  book.authors %}#}
+{#   作者: {{ authors.first_name }}<br>#}
+{#    {% endfor %}#}
+    {{yy }}
+{% endfor %}
+{% for qz in qzs %}
+   名字: {{ qz.zf.name }}
+   <br>
+
+{% endfor %}
+{{qzs }}
+{% for bm in bms %}
+ {% for b in bm.personnel_set.all %}
+     {{ b.name }}
+     <br>
+ {% endfor %}
+{% endfor %}
+{#{{ bms }}#}
+<div id="id">{{ blog.content | safe }}</div>
+
+<script id="container" name="content" type="text/plain">
+        发言
+        </script>
+        <script type="text/javascript">
+          var ue = UE.getEditor('container');
+        </script>
+</body>
+<script type="text/javascript">
+{#    var value={{ blog.content | safe }}#}
+{#    alert(value );#}
+{#   $("#id").html();#}
+
+</script>
+</html>
